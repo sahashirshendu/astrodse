@@ -10,11 +10,11 @@ t0 = 0
 
 
 def f(x, y): # dt/da; x == a, y == t
-    return x ** 0.5 / (H * wm ** 0.5)
+    return x**0.5 / (H * wm**0.5)
 
 
 def g(x): # t(a)
-    return 2 * x ** 1.5 / (3 * H * wm ** 0.5)
+    return 2 * x**1.5 / (3 * H * wm**0.5)
 
 
 def rk4(f, a, b, n, ic):
