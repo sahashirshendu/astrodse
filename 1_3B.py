@@ -8,7 +8,7 @@ a1 = 1.00
 n = 100
 
 
-def f(x): # dt(a)/da
+def f(x, y): # dt/da, x -> a, y -> t
     return x**0.5 / (H * wm**0.5)
 
 
@@ -20,7 +20,7 @@ a = np.linspace(a0, a1, n)
 t = np.zeros(n)
 t[0] = 0
 for i in range(n - 1):
-    t[i + 1] = t[i] + h * f(a[i] + 0.5 * h)
+    t[i + 1] = t[i] + h * f(a[i] + 0.5 * h, t[i] + 0.5 * h * f(a[i], t[i]))
 
 tr = g(a)
 
