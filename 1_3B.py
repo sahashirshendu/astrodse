@@ -3,10 +3,9 @@ import matplotlib.pyplot as plt
 
 H = 70 / 3.08e13
 wm = 1.0
-a0 = 1e-10 # 0.00
+a0 = 1e-10
 a1 = 1.00
 n = 100
-t0 = 0
 
 
 def f(x, y): # dt/da; x == a, y == t
@@ -16,17 +15,12 @@ def f(x, y): # dt/da; x == a, y == t
 def g(x): # t(a)
     return 2 * x**1.5 / (3 * H * wm**0.5)
 
-
-def rk4(f, a, b, n, ic):
-    h = (b - a) / (n - 1)
-    x = np.arange(a, b + h, h)
-    y = np.zeros(n)
-    y[0] = ic
-    for i in range(n - 1):
-        y[i + 1] = y[i] + h * f(x[i] + 0.5 * h, y[i] + 0.5 * h * f(x[i], y[i]))
-    return [x, y]
-
-[a, t] = rk4(f, a0, a1, n, t0)
+h = (a1 - a0) / (n - 1)
+a = np.linspace(a0, a1, n)
+t = np.zeros(n)
+t[0] = 0
+for i in range(n - 1):
+    t[i + 1] = t[i] + h * f(a[i] + 0.5 * h, t[i] + 0.5 * h * f(a[i], t[i]))
 
 tr = g(a)
 
