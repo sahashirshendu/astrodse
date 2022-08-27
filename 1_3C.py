@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-plt.rcParams.update({"text.usetex": True})
 
 H = 70 / 3.0857e19
 wm = 0.3
