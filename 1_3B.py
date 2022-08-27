@@ -7,8 +7,8 @@ a0 = 1e-10
 a1 = 1.00
 n = 100
 
-
-def f(x, y): # dt/da, x -> a, y -> t
+# x -> a, y -> t
+def f(x, y):
     return x**0.5 / (H * wm**0.5)
 
 
