@@ -12,7 +12,7 @@ def f(x, y):
     return x**0.5 / (H * wm**0.5)
 
 
-def g(x): # t(a)
+def g(x):
     return 2 * x**1.5 / (3 * H * wm**0.5)
 
 h = (a1 - a0) / (n - 1)
