@@ -2,16 +2,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 H = 70 / 3.086e19
-wm = 0.3
+wm = 0.9
 wr = 5e-5
-wde = 0.7
-w = -1.0
-a0 = 1e-10
+a0 = 0.0
 a1 = 1.0
 n = 100
+k = -0.9
 
-def f(a, t):
-    return 1 / (H * np.sqrt(wm / a + wr / a ** 2 + wde / a ** (3 * w - 1)))
+# x -> a, y -> t
+def f(x, y):
+    return 1 / (H ** 2 * (wm / x + wr / x ** 2) - k)
 
 h = (a1 - a0) / (n - 1)
 a = np.linspace(a0, a1, n)

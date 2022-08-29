@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-H = 70 / 3.0857e19
+H = 70 / 3.086e19
 wm = 1.0
 a0 = 0.0
 a1 = 1.0
