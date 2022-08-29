@@ -7,13 +7,11 @@ a0 = 0.0
 a1 = 1.0
 n = 100
 
-# x -> a, y -> t
-def f(x, y):
-    return x**0.5 / (H * wm**0.5)
+def f(a, t):
+    return a**0.5 / (H * wm**0.5)
 
-
-def g(x):
-    return 2 * x**1.5 / (3 * H * wm**0.5)
+def g(a):
+    return 2 * a**1.5 / (3 * H * wm**0.5)
 
 h = (a1 - a0) / (n - 1)
 a = np.linspace(a0, a1, n)
