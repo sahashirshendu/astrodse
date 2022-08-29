@@ -20,7 +20,7 @@ t[0] = 0
 for i in range(n - 1):
     t[i + 1] = t[i] + h * f(a[i] + 0.5 * h, t[i] + 0.5 * h * f(a[i], t[i]))
 
-plt.plot(t,a,'-',label='Numerical')
+plt.plot(t,a,'-',label='LambdaCDM')
 plt.xlabel('t [seconds]')
 plt.ylabel('a(t)')
 plt.legend()
