@@ -2,14 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 H = 70 / 3.086e19
-wm = 0.0
-wr = 0.0
-wde = 1.0
+wm = 0.3
+wr = 5e-5
+wde = 0.7
 w1 = -2./3.
 w2 = -1./2.
 a0 = 1e-10
 a1 = 1.0
-n = 100
+n = 1000
 
 def f(a, t, w):
     return 1 / (H * (wm / a + wr / a ** 2 + wde / a ** (3 * w + 1)) ** 0.5)

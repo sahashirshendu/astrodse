@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 H = 70 / 3.086e19
 a0 = 0.0
 a1 = 1.0
-n = 100
+n = 1000
 
 def f(a, t):
     return a**0.5 / H

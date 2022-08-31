@@ -7,10 +7,10 @@ wr = 5e-5
 k = -0.3
 a0 = 1e-10
 a1 = 1.0
-n = 100
+n = 1000
 
 def f(a, t):
-    return 1 / (H ** 2 * (wm / a + wr / a ** 2) - k)
+    return 1 / (H ** 2 * (wm / a + wr / a ** 2 - k))
 
 h = (a1 - a0) / (n - 1)
 a = np.linspace(a0, a1, n)
