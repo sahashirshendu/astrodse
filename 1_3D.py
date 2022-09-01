@@ -11,8 +11,8 @@ a1 = 1.0
 n = 1000
 
 def f(a, t, wm):
-    wk = 1 - wm
-    return 1 / (H ** 2 * (wm / a +  wr / a ** 2 + wk))
+    wk = wm - 1
+    return 1 / (H ** 2 * (wm / a +  wr / a ** 2 - wk))
 
 h = (a1 - a0) / (n - 1)
 a = np.linspace(a0, a1, n)
