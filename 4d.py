@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.integrate import quad
 import matplotlib.pyplot as plt
 
 H_0 = 70/3.086e19
@@ -21,8 +22,11 @@ dl1 = np.zeros(n)
 da2 = np.zeros(n)
 dl2 = np.zeros(n)
 
-def EO(z, w):
-    return (wm*(1+z)**3 + wr*(1+z)**4 + wl*(1+z)**(3*(1+w)))**-0.5
+def EO1(z):
+    return (wm*(1+z)**3 + wr*(1+z)**4 + wl*(1+z)**(3*(1+w1)))**-0.5
+
+def EO2(z):
+    return (wm*(1+z)**3 + wr*(1+z)**4 + wl*(1+z)**(3*(1+w2)))**-0.5
 
 def ET(z, w):
     return 1 / (1+z) * (wm*(1+z)**3 + wr*(1+z)**4 + wl*(1+z)**(3*(1+w)))**-0.5
@@ -51,13 +55,9 @@ dsum1 = 0
 dsum2 = 0
 for i in range (1,n+1):
     zr.append(zre)
-    dp1.append(dpe1)
-    dp2.append(dpe2)
+    dp1.append(dh * quad(EO1, 0, zre)[0])
+    dp2.append(dh * quad(EO2, 0, zre)[0])
     zre = i*h
-    dsum1 = dsum1 + EO(zre, w1)
-    dsum2 = dsum2 + EO(zre, w2)
-    dpe1 = dh * h/2 * (EO(0, w1) + 2*dsum1 + EO(z, w1))
-    dpe2 = dh * h/2 * (EO(0, w2) + 2*dsum2 + EO(z, w2))
 
 for i in range(n):
     da1[i] = dp1[i] / (1 + zr[i])

@@ -1,4 +1,5 @@
 import numpy as np
+from scipy.integrate import quad
 import matplotlib.pyplot as plt
 
 H_0 = 70/3.086e19
@@ -41,10 +42,8 @@ dp = []
 dsum = 0
 for i in range (1,n+1):
     zr.append(zre)
-    dp.append(dpe)
+    dp.append(dh * quad(EO, 0, zre)[0])
     zre = i*h
-    dsum = dsum + EO(zre)
-    dpe = dh * h/2 * (EO(0) + 2*dsum + EO(z))
 
 for i in range(n):
     da[i] = dp[i] / (1 + zr[i])
