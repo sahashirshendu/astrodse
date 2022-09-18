@@ -50,7 +50,7 @@ for i in range(n):
     dl[i] = dp[i] * (1 + zr[i])
 
 print("Age of the universe =",t,"billion years")
-plt.plot(zr,dp,label="Proper Distance")
+plt.plot(zr,dp,label="Distance")
 plt.plot(zr,da,label="Angular Diameter Distance")
 plt.plot(zr,dl,label="Luminosity Distance")
 plt.xlabel("Redshift (z)")

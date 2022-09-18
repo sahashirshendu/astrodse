@@ -67,10 +67,10 @@ for i in range(n):
 
 print("Age of universe (w=-2/3) =",t1,"billion years")
 print("Age of universe (w=-1/2) =",t2,"billion years")
-plt.plot(zr,dp1,label="Proper Distance (w = -2/3)")
+plt.plot(zr,dp1,label="Distance (w = -2/3)")
 plt.plot(zr,da1,label="Angular Diameter Distance (w = -2/3)")
 plt.plot(zr,dl1,label="Luminosity Distance (w = -2/3)")
-plt.plot(zr,dp2,label="Proper Distance (w = -1/2)")
+plt.plot(zr,dp2,label="Distance (w = -1/2)")
 plt.plot(zr,da2,label="Angular Diameter Distance (w = -1/2)")
 plt.plot(zr,dl2,label="Luminosity Distance (w = -1/2)")
 plt.xlabel("Redshift (z)")
