@@ -66,9 +66,9 @@ def plot_profile(r,v):
     m = v[...,0]
     p = v[...,1]
     rho = get_rho(p)
-    plt.plot(r,m,lw=3)
-    plt.plot(r,p,lw=3)
-    plt.plot(r,rho,lw=3)
+    plt.plot(r,m)
+    plt.plot(r,p)
+    plt.plot(r,rho)
     plt.xlabel('radius')
     plt.legend(['mass','pressure','density'])
     plt.show()
