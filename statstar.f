@@ -111,7 +111,7 @@
      1        mu, i, ierr)
           if (ierr.ne.0) then           
               write(*,300)
-              write(*,400) r(im1)/Rs, rho(im1), M_r(im1)/Ms, kappa(im1), 
+              write(*,400) r(im1)/Rs, rho(im1), M_r(im1)/Ms, kappa(im1),
      1            T(im1), epslon(im1), P(im1), L_r(im1)/Ls
               stop
           end if
