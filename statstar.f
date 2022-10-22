@@ -1,4 +1,4 @@
-      Program STATSTAR
+      program statstar
       real*8 r(999), P(999), M_r(999), L_r(999), T(999), deltar, Te
       real*8 rho(999), kappa(999), epslon(999), dlPdlT(999)
       real*8 X, Y, Z, XCNO, mu
