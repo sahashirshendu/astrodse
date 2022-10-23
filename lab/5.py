@@ -1,13 +1,12 @@
-import numpy as np
-import matplotlib.pyplot as plt
+from pylab import *
 
-data = np.loadtxt("pleiades.txt")
+data = loadtxt("pleiades.txt")
 b = data[:, 0]
 v = data[:, 1]
 d = 116
-V = v + 5 - 5 * np.log10(d)
+V = v + 5 - 5 * log10(d)
 
-fig, ax1 = plt.subplots()
+fig, ax1 = subplots()
 
 ax1.grid()
 ax1.set_xlabel("$B-V$")
@@ -30,7 +29,7 @@ ax2.legend()
 ax3 = ax1.twiny()
 ax3.plot(b - v, v, "b.")
 
-plt.title("Pleiades")
-# plt.grid()
-# plt.gca().invert_yaxis()
-plt.show()
+title("Pleiades")
+# grid()
+# gca().invert_yaxis()
+show()
