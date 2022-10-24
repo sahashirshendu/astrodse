@@ -1,4 +1,15 @@
       program starmodl
+c
+c  This program will calculate a static stellar model using the
+c  stellar structure equations.  The user is expected to supply the
+c  star's mass, luminosity, effective temperature, and composition
+c  (X and Z).  If the choices for these quantities are not consistent
+c  with the central boundary conditions, an error message will be
+c  generated and the user will then need to supply a different set of
+c  initial values.
+c
+c  http://www.phys.unm.edu/~gbtaylor/astr421
+c
       real*8 r(999), P(999), M_r(999), L_r(999), T(999), deltar, Te
       real*8 rho(999), kappa(999), epslon(999), dlPdlT(999)
       real*8 X, Y, Z, XCNO, mu
