@@ -375,7 +375,7 @@ def StatStar(Msolar,Lsolar,Te,X,Z):
       if (Mcrat < -9.999e0): Mcrat = -9.999e0
       Lcrat = L_r[istop]/Ls
       if (Lcrat < -9.999e0): Lcrat = -9.999e0
-      f=open('starmodl_py.dat','w')
+      f=open('starmodl.dat','w')
       f.write('A Homogeneous Main-Sequence Model\n')
       f.write(' The surface conditions are:        The central conditions are:\n')
       f.write(' Mtot = {0:13.6E} Msun          Mc/Mtot     = {1:12.5E}\n'.format(Msolar,Mcrat))
@@ -407,7 +407,7 @@ def StatStar(Msolar,Lsolar,Te,X,Z):
           s='{0:7.2E} {1:7.2E} {2:7.2E} {3:7.2E} {4:7.2E} {5:7.2E} {6:7.2E} {7:6.2E}{8:1s}{9:1s} {10:5.1f}\n'.format(r[i], Qm, L_r[i], T[i], P[i], rho[i], kappa[i],epslon[i], clim, rcf, dlPdlT[i])  
           f.write(s)
       print ('***** The integration has been completed *****')
-      print ('      The model has been stored in starmodl_py.dat')
+      print ('      The model has been stored in starmodl.dat')
       return Igoof,ierr,istop
 def main():
       getinp=1  # read in input
