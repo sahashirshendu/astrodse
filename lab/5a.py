@@ -1,8 +1,8 @@
 from pylab import *
 
 data = loadtxt('pleiades.txt')
-b = data[:, 0]
-v = data[:, 1]
+b = data[:,0]
+v = data[:,1]
 bv = b-v
 nx = []
 ny = [] # not in main sequenc
