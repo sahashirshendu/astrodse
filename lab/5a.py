@@ -20,4 +20,3 @@ plot(nx,ny,'r.')
 title('Pleiades Cluster')
 legend()
 show()
-
