@@ -9,11 +9,11 @@
   - [2a](./2a.py)
   - [2b](./2b.py)
   - [2d](./2d.py)
-- CMB
-  - [3a](./3a.py)
+- [CMB](3_cmb.py)
 - HR Diagram
   - [4a](./4a.py)
   - [4d](./4d.py)
   - [4e](./4e.py)
   - [4f](./4f.py)
   - [4g](./4g.py)
+- [Stellar Structure](5_structure.py)
