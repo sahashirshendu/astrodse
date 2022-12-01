@@ -5,7 +5,7 @@ b = data[:,0]
 v = data[:,1]
 bv = b-v
 nx = []
-ny = [] # not in main sequenc
+ny = [] # not in main sequence
 for i in range(len(bv)):
     if (bv[i]<-0.04):
         nx.append(bv[i])
