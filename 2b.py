@@ -1,6 +1,5 @@
-import numpy as np
+from pylab import *
 from scipy.integrate import quad
-import matplotlib.pyplot as plt
 
 H_0 = 70/3.086e19
 c = 3e8
@@ -15,8 +14,8 @@ z = 5.0
 n = 1000
 
 h = z / (n-1)
-da = np.zeros(n)
-dl = np.zeros(n)
+da = zeros(n)
+dl = zeros(n)
 
 def EO(z):
     return (wm*(1+z)**3 + wr*(1+z)**4 + wl*(1+z)**(3*(1+w)))**-0.5
@@ -33,7 +32,7 @@ tsum = ET(0) + ET(zt)
 for i in range (1,nt-1):
     zpe = i*ht
     tsum = tsum + 2 * ET(zpe)
-t = th * (ht/2 * tsum) / (np.pi*1e16)
+t = th * (ht/2 * tsum) / (pi*1e16)
 
 zre = 0
 dpe = 0
@@ -50,11 +49,11 @@ for i in range(n):
     dl[i] = dp[i] * (1 + zr[i])
 
 print("Age of the universe =",t,"billion years")
-plt.plot(zr,dp,label="Distance")
-plt.plot(zr,da,label="Angular Diameter Distance")
-plt.plot(zr,dl,label="Luminosity Distance")
-plt.xlabel("Redshift (z)")
-plt.ylabel("Distance (Megaparsec)")
-plt.legend()
-plt.grid()
-plt.show()
+plot(zr,dp,label="Distance")
+plot(zr,da,label="Angular Diameter Distance")
+plot(zr,dl,label="Luminosity Distance")
+xlabel("Redshift (z)")
+ylabel("Distance (Megaparsec)")
+legend()
+grid()
+show()

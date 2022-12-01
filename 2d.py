@@ -1,6 +1,5 @@
-import numpy as np
+from pylab import *
 from scipy.integrate import quad
-import matplotlib.pyplot as plt
 
 H_0 = 70/3.086e19
 c = 3e8
@@ -17,10 +16,10 @@ z = 5.0
 n = 1000
 
 h = z / (n-1)
-da1 = np.zeros(n)
-dl1 = np.zeros(n)
-da2 = np.zeros(n)
-dl2 = np.zeros(n)
+da1 = zeros(n)
+dl1 = zeros(n)
+da2 = zeros(n)
+dl2 = zeros(n)
 
 def EO1(z):
     return (wm*(1+z)**3 + wr*(1+z)**4 + wl*(1+z)**(3*(1+w1)))**-0.5
@@ -42,8 +41,8 @@ for i in range (1,nt-1):
     zpe = i*ht
     tsum1 = tsum1 + 2 * ET(zpe, w1)
     tsum2 = tsum2 + 2 * ET(zpe, w2)
-t1 = th * (ht/2 * tsum1) / (np.pi*1e16)
-t2 = th * (ht/2 * tsum2) / (np.pi*1e16)
+t1 = th * (ht/2 * tsum1) / (pi*1e16)
+t2 = th * (ht/2 * tsum2) / (pi*1e16)
 
 zre = 0
 dpe1 = 0
@@ -67,14 +66,14 @@ for i in range(n):
 
 print("Age of universe (w=-2/3) =",t1,"billion years")
 print("Age of universe (w=-1/2) =",t2,"billion years")
-plt.plot(zr,dp1,label="Distance (w = -2/3)")
-plt.plot(zr,da1,label="Angular Diameter Distance (w = -2/3)")
-plt.plot(zr,dl1,label="Luminosity Distance (w = -2/3)")
-plt.plot(zr,dp2,label="Distance (w = -1/2)")
-plt.plot(zr,da2,label="Angular Diameter Distance (w = -1/2)")
-plt.plot(zr,dl2,label="Luminosity Distance (w = -1/2)")
-plt.xlabel("Redshift (z)")
-plt.ylabel("Distance (Megaparsec)")
-plt.legend()
-plt.grid()
-plt.show()
+plot(zr,dp1,label="Distance (w = -2/3)")
+plot(zr,da1,label="Angular Diameter Distance (w = -2/3)")
+plot(zr,dl1,label="Luminosity Distance (w = -2/3)")
+plot(zr,dp2,label="Distance (w = -1/2)")
+plot(zr,da2,label="Angular Diameter Distance (w = -1/2)")
+plot(zr,dl2,label="Luminosity Distance (w = -1/2)")
+xlabel("Redshift (z)")
+ylabel("Distance (Megaparsec)")
+legend()
+grid()
+show()

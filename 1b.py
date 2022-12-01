@@ -1,27 +1,26 @@
-import numpy as np
-import matplotlib.pyplot as plt
+from pylab import *
 
-H = 70 / 3.086e19
-a0 = 0.0
-a1 = 1.0
-n = 1000
+H=70/3.086e19
+a0=0.0
+a1=1.0
+n=1000
 
-def f(a, t):
-    return a**0.5 / H
+def f(a,t):
+    return a**0.5/H
 
 def g(a):
-    return 2 * a**1.5 / (3 * H)
+    return 2*a**1.5/(3*H)
 
-h = (a1 - a0) / (n - 1)
-a = np.linspace(a0, a1, n)
-t = np.zeros(n)
-t[0] = 0
+h=(a1-a0)/(n-1)
+a=linspace(a0,a1,n)
+t=zeros(n)
+t[0]=0
 for i in range(n - 1):
-    t[i + 1] = t[i] + h * f(a[i] + 0.5 * h, t[i] + 0.5 * h * f(a[i], t[i]))
+    t[i+1]=t[i]+h*f(a[i]+.5*h,t[i]+.5*h*f(a[i],t[i]))
 
-plt.plot(t,a,'-',label='Numerical')
-plt.plot(g(a),a,'.',label='Analytical')
-plt.xlabel('t [seconds]')
-plt.ylabel('a(t)')
-plt.legend()
-plt.show()
+plot(t,a,'-',label='Numerical')
+plot(g(a),a,'.',label='Analytical')
+xlabel('t [seconds]')
+ylabel('a(t)')
+legend()
+show()
