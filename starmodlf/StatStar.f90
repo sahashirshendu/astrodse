@@ -218,7 +218,7 @@ PROGRAM StatStar
                 END IF
 
                 tau = tau + Optical_Depth_Change(kappa_0, kappa, rho_0, rho, 0.0_dp, r)
-                WRITE (10,format_table) i, 0, tau, 1-M_r/Ms, L_r, T_0, P_0, rho_0, kappa_0, epsilon_0, rc_flag, dlnPdlnT
+                WRITE (10,format_table) i, 0.0, tau, 1-M_r/Ms, L_r, T_0, P_0, rho_0, kappa_0, epsilon_0, rc_flag, dlnPdlnT
 
 !               Write initial and final conditions to the screen
                 CALL Final_Results(i, Msolar, Ms, M_r, Lsolar, Ls, L_r, r, Rs, Rsolar, Teff, X, Y, Z, &
